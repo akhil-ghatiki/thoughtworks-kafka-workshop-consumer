@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ThoughtworksKafkaWorkshopConsumerApplication {
+public class MarketPlaceEventConsumerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ThoughtworksKafkaWorkshopConsumerApplication.class, args);
+		SpringApplication.run(MarketPlaceEventConsumerApplication.class, args);
 	}
 
 }
