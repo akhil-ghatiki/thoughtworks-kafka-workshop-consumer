@@ -9,8 +9,15 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MarketPlaceEventsConsumer {
 
-    @KafkaListener(topics = {"market-place-events"}, groupId = "market-place-events-listener-group")
-    public void onMessage(ConsumerRecord<Integer,String> consumerRecord){
-        log.info("Consume Record: {}", consumerRecord);
-    }
+  /**
+   * Use only one consumer. If you plan to use this consumer, please comment the @Component of
+   * MarketPlaceEventsConsumerManualAcknowledgement.java This will not create the bean of other
+   * consumer.
+   */
+  @KafkaListener(
+      topics = {"market-place-events"},
+      groupId = "market-place-events-listener-group")
+  public void onMessage(ConsumerRecord<Integer, String> consumerRecord) {
+    log.info("Consume Record: {}", consumerRecord);
+  }
 }
