@@ -33,7 +33,12 @@ public class MarketPlaceEventsConsumerConfig {
     ConcurrentKafkaListenerContainerFactory<Integer, String> factory =
         new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory());
-    //        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
+    // factory.setConcurrency(3);
+    // TODO  Runs 3 consumers on three different threads. This is recommended when you are not running
+    //  your application in a cloud
+
+
+    // factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL);
     return factory;
   }
 }
