@@ -3,6 +3,7 @@ package com.thoughtworks.kafka.workshop.config;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.OffsetResetStrategy;
 import org.apache.kafka.common.serialization.IntegerDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -24,6 +25,7 @@ public class MarketPlaceEventsConsumerConfig {
     properties.put(ConsumerConfig.GROUP_ID_CONFIG, "market-place-events-listener-group");
     properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class);
     properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+    properties.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
     return new DefaultKafkaConsumerFactory<>(properties);
   }
