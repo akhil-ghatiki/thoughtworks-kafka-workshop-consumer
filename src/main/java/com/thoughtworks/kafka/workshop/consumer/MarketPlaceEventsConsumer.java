@@ -19,5 +19,6 @@ public class MarketPlaceEventsConsumer {
       groupId = "market-place-events-listener-group")
   public void onMessage(ConsumerRecord<Integer, String> consumerRecord) {
     log.info("Consume Record: {}", consumerRecord);
+    throw new RuntimeException("Forced exception");
   }
 }
