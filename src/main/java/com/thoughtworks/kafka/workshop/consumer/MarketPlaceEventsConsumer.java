@@ -19,5 +19,7 @@ public class MarketPlaceEventsConsumer {
       groupId = "market-place-events-listener-group")
   public void onMessage(ConsumerRecord<Integer, String> consumerRecord) {
     log.info("Consume Record: {}", consumerRecord);
+    //The below code is always going to fail, so that we can test the behaviour of blocking retry
+    throw new RuntimeException("Forced exception");
   }
 }
