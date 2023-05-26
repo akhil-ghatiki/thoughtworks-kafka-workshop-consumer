@@ -20,7 +20,7 @@ public class MarketPlaceEventsConsumerWithNonBlockingRetry {
      * Use only one consumer. If you plan to use this consumer, please comment the @Component of
      * others. This will not create the bean of other consumer.
      */
-    //TODO: Handle the exception here and send event to DLT.
+    //TODO: Handle the exception here and send event to DLT. Hint: Explore RetryableTopic
     @KafkaListener(id = "market-place-events-listener-group", topics = {"market-place-events"})
     public void onMessage(String message, @Header(KafkaHeaders.RECEIVED_TOPIC) String topic) {
         log.info("Received message: {} from topic: {}", message, topic);
