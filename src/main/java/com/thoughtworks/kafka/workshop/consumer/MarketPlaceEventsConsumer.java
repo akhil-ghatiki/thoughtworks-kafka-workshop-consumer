@@ -15,7 +15,6 @@ public class MarketPlaceEventsConsumer {
    * consumer.
    */
 //TODO: read message from a specific topic
- //TODO: read headers along with the message
   public void onMessage(ConsumerRecord<Integer, String> consumerRecord) {
     log.info("Consume Record: {}", consumerRecord);
   }
