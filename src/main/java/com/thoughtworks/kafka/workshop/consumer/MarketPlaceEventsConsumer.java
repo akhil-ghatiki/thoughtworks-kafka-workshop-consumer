@@ -14,9 +14,8 @@ public class MarketPlaceEventsConsumer {
    * MarketPlaceEventsConsumerManualAcknowledgement.java This will not create the bean of other
    * consumer.
    */
-  @KafkaListener(
-      topics = {"market-place-events"},
-      groupId = "market-place-events-listener-group")
+//TODO: read message from a specific topic
+ //TODO: read headers along with the message
   public void onMessage(ConsumerRecord<Integer, String> consumerRecord) {
     log.info("Consume Record: {}", consumerRecord);
   }
